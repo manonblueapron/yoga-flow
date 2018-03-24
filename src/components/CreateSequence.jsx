@@ -5,7 +5,7 @@ class CreateSequence extends Component {
   render() {
     return (
       <div>
-        <p> Hello this is 'home' </p>
+        <p> Yo sequence time! </p>
       </div>
     );
   }
