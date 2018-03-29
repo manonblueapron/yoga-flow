@@ -6,6 +6,9 @@ import PoseSelector from './PoseSelector';
 let style = {
   table: {
     width: '100%'
+  },
+  td: {
+    width: '50%'
   }
 };
 
@@ -52,18 +55,16 @@ class CreateSequence extends Component {
   }
 
   render() {
-    // let selectedPoses = ['one', 'two', 'three','one', 'two', 'three','one', 'two', 'three'];
-
     return (
       <div>
         <p> Yo sequence time! </p>
         <table style={style.table}>
           <tbody>
             <tr>
-              <td style={{width: '50%'}}>
+              <td style={style.td}>
                 <PoseSelector
                   handlePoseSelection= {(e) => this.handlePoseSelectionChange(e)}
-                  grouped_poses
+                  grouped_poses = {grouped_poses}
                 />
               </td>
               <td>

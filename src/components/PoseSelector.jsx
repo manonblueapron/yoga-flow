@@ -7,39 +7,15 @@ import Divider from 'material-ui/Divider';
 import CommunicationChatBubble from 'material-ui/svg-icons/communication/chat-bubble';
 import PoseGroupItem from './PoseGroupItem';
 
-let pose_groups = [
-  {
-    group_name: 'CHILL POSES',
-    open: true,
-    poses: [
-      {
-        id: 'one',
-        name: 'dodo'
-      }
-    ]
-  },{
-    group_name: 'STANDING POSES',
-    open: false,
-    poses: [
-      {
-        id: 'two',
-        name: 'debout',
-      },
-      {
-        id: 'three',
-        name: 'les bras en l air',
-      }
-    ]
-  }
-];
-
 class PoseSelector extends Component {
   constructor(props) {
     super(props);
   }
 
   render() {
-    let pose_group_items = pose_groups.map((pose_group) =>
+    let grouped_poses = [];
+    grouped_poses = this.props.grouped_poses;
+    let pose_group_items = grouped_poses.map((pose_group) =>
       <PoseGroupItem
         pose_group={pose_group}
         onPoseClick={(e) => this.props.handlePoseSelection(e)}
@@ -47,7 +23,7 @@ class PoseSelector extends Component {
     );
 
     return (
-      <div style={{height: '50px'}}>
+      <div>
         <MuiThemeProvider>
           <List>
             {pose_group_items}
