@@ -41,7 +41,7 @@ let grouped_poses = [
 class CreateSequence extends Component {
   constructor(props) {
     super(props);
-    this.state = {selected_poses: []};
+    this.state = {selected_poses: ["one", "two", "three", "one", "two", "three", "one", "two", "three"]};
 
     this.handlePoseSelectionChange = this.handlePoseSelectionChange.bind(this);
   }
