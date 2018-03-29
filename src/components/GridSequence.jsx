@@ -18,8 +18,10 @@ class GridSequence extends Component {
   }
 
   handleDeleteSequenceItem (e) {
-    console.log('aa');
-    console.log(e);
+    let a = this.props.selectedPoses;
+    let index = e.index;
+    a.splice(index, 1);
+    this.setState({selectedPoses: a});
   }
 
   render() {
@@ -28,12 +30,21 @@ class GridSequence extends Component {
     let number_lines = selectedPoses.length / 3;
     let column_number = 3;
 
+    let index = 0;
     for(let i = 0; i < number_lines; i++) {
       let start = i*column_number;
       let finish = (i+1)*column_number;
-      let row_elements = selectedPoses.slice(start, finish).map((selectedPose) =>
-        <SequenceItem selectedPose={selectedPose} onClick={() => this.handleDeleteSequenceItem({selectedPose: selectedPose})} />
-      );
+      let row_elements = [];
+      selectedPoses.slice(start, finish).forEach((selectedPose) => {
+        row_elements.push(
+          <SequenceItem
+            selectedPose={selectedPose}
+            index = {index}
+            onClick={(e) => this.handleDeleteSequenceItem(e)}
+          />
+        );
+        index = index + 1;
+      });
 
       rows.push(<tr>
         {row_elements}

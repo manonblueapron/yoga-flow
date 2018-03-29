@@ -13,11 +13,10 @@ class SequenceItem extends Component {
     return (
       <td>
         <img src={require("../images/".concat(selectedPose, ".jpg"))} alt = '' style={style.image}/>
-        <DeleteIcon onClick={this.props.onClick}/>
+        <DeleteIcon onClick={() => this.props.onClick({index: this.props.index})}/>
       </td>
     );
   }
 }
 
 export default SequenceItem;
-// <DeleteIcon onClick={() => this.props.onClick({selectedPose: this.props.selectedPose})}/>
