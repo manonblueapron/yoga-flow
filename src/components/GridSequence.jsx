@@ -20,9 +20,12 @@ class GridSequence extends Component {
   let rows = [];
   let selectedPoses = this.props.selectedPoses;
   let number_lines = selectedPoses.length / 3;
+  let column_number = 3;
 
   for(let i = 0; i < number_lines; i++) {
-    let row_elements = selectedPoses.slice(i*3, i*3+3).map((selectedPose) =>
+    let start = i*column_number;
+    let finish = (i+1)*column_number;
+    let row_elements = selectedPoses.slice(start, finish).map((selectedPose) =>
       <td>
         <img src={require("../images/".concat(selectedPose, ".jpg"))} alt = '' style={style.image}/>
       </td>

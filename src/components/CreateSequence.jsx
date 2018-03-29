@@ -47,8 +47,6 @@ class CreateSequence extends Component {
   }
 
   handlePoseSelectionChange (e) {
-    console.log('handlePoseSelectionChange');
-    console.log(e);
     let poses = this.state.selected_poses;
     poses.push(e.pose_id);
     this.setState({selected_poses: poses});
