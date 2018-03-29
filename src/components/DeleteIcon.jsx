@@ -6,13 +6,11 @@ import Delete from 'material-ui/svg-icons/action/delete';
 class DeleteIcon extends Component {
   render() {
     return (
-      <td>
-        <MuiThemeProvider>
-          <IconButton onClick={this.props.onClick}>
-            <Delete />
-          </IconButton>
-        </MuiThemeProvider>
-      </td>
+      <MuiThemeProvider>
+        <IconButton onClick={this.props.onClick}>
+          <Delete />
+        </IconButton>
+      </MuiThemeProvider>
     );
   }
 }

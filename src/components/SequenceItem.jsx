@@ -12,8 +12,17 @@ class SequenceItem extends Component {
     let selectedPose = this.props.selectedPose;
     return (
       <td>
-        <img src={require("../images/".concat(selectedPose, ".jpg"))} alt = '' style={style.image}/>
-        <DeleteIcon onClick={() => this.props.onClick({index: this.props.index})}/>
+        <img src={require("../images/".concat(selectedPose.id, ".jpg"))} alt = '' style={style.image}/>
+        <table>
+          <tr>
+            <td>
+              <DeleteIcon onClick={() => this.props.onClick({index: this.props.index})}/>
+            </td>
+            <td>
+              <h3>{selectedPose.name}</h3>
+            </td>
+          </tr>
+        </table>
       </td>
     );
   }

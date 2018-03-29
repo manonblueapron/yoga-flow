@@ -38,17 +38,54 @@ let grouped_poses = [
   }
 ];
 
+let selectedPosesSource = [
+  {
+    id: "one",
+    name: "picture_one"
+  },
+  {
+    id: "two",
+    name: "picture_two"
+  },
+  {
+    id: "three",
+    name: "picture_three"
+  },
+    {
+    id: "one",
+    name: "picture_one"
+  },
+  {
+    id: "two",
+    name: "picture_two"
+  },
+  {
+    id: "three",
+    name: "picture_three"
+  },
+  {
+    id: "one",
+    name: "picture_one"
+  },
+  {
+    id: "two",
+    name: "picture_two"
+  },
+  {
+    id: "three",
+    name: "picture_three"
+  }];
 class CreateSequence extends Component {
   constructor(props) {
     super(props);
-    this.state = {selected_poses: ["one", "two", "three", "one", "two", "three", "one", "two", "three"]};
+    this.state = {selected_poses: selectedPosesSource};
 
     this.handlePoseSelectionChange = this.handlePoseSelectionChange.bind(this);
   }
 
   handlePoseSelectionChange (e) {
     let poses = this.state.selected_poses;
-    poses.push(e.pose_id);
+    poses.push(e.pose);
     this.setState({selected_poses: poses});
   }
 
